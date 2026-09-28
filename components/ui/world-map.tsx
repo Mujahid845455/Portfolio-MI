@@ -79,17 +79,17 @@ export default function WorldMap({
   }, [dots]);
 
   return (
-    <div className={`relative w-full overflow-hidden rounded-2xl bg-[#030712] border border-white/10 p-4 shadow-2xl ${className}`}>
+    <div className={`relative w-full overflow-hidden rounded-xl sm:rounded-2xl bg-[#030712] border border-white/10 p-2 sm:p-4 shadow-2xl ${className}`}>
       
       {/* Map Header / Title overlay */}
-      <div className="absolute top-4 left-4 z-20 flex items-center gap-2">
-        <span className="w-2 h-2 rounded-full bg-blue-400 animate-ping" />
-        <span className="text-xs font-mono text-gray-300 font-semibold uppercase tracking-wider">
+      <div className="absolute top-2 left-2 sm:top-4 sm:left-4 z-20 flex items-center gap-1.5 sm:gap-2">
+        <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-blue-400 animate-ping" />
+        <span className="text-[9px] sm:text-xs font-mono text-gray-300 font-semibold uppercase tracking-wider">
           Global Connectivity • Remote Active
         </span>
       </div>
 
-      <div className="relative w-full aspect-[2/1] min-h-[260px]">
+      <div className="relative w-full aspect-[2/1] min-h-[200px] sm:min-h-[260px]">
         {/* World Map SVG Canvas */}
         <svg
           viewBox={`0 0 ${SVG_WIDTH} ${SVG_HEIGHT}`}
@@ -175,27 +175,27 @@ export default function WorldMap({
             left: `${(homePoint.x / SVG_WIDTH) * 100}%`,
             top: `${(homePoint.y / SVG_HEIGHT) * 100}%`,
           }}
-          className="absolute -translate-x-1/2 -translate-y-full z-30 flex flex-col items-center pointer-events-none"
+          className="absolute -translate-x-1/2 -translate-y-full z-30 flex flex-col items-center pointer-events-none scale-75 sm:scale-100"
         >
           {/* Floating Pill Label "We are here" */}
           <motion.div
             initial={{ y: -4 }}
             animate={{ y: 2 }}
             transition={{ duration: 1.5, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut' }}
-            className="px-3 py-1 bg-[#090d18] text-white font-mono text-[11px] font-bold rounded-lg border border-blue-500/50 shadow-[0_0_20px_rgba(59,130,246,0.6)] flex items-center gap-1.5 whitespace-nowrap mb-1"
+            className="px-2.5 py-0.5 sm:px-3 sm:py-1 bg-[#090d18] text-white font-mono text-[9px] sm:text-[11px] font-bold rounded-md sm:rounded-lg border border-blue-500/50 shadow-[0_0_20px_rgba(59,130,246,0.6)] flex items-center gap-1 sm:gap-1.5 whitespace-nowrap mb-0.5 sm:mb-1"
           >
-            <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
+            <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-blue-400 animate-pulse" />
             <span>We are here</span>
           </motion.div>
 
           {/* Glowing Pin Needle Line */}
-          <div className="w-[2px] h-7 bg-gradient-to-t from-blue-400 via-indigo-500 to-transparent shadow-[0_0_12px_#3b82f6]" />
+          <div className="w-[2px] h-5 sm:h-7 bg-gradient-to-t from-blue-400 via-indigo-500 to-transparent shadow-[0_0_12px_#3b82f6]" />
 
           {/* Glowing Radar Pulse Rings at Pin Base */}
           <div className="relative flex items-center justify-center">
-            <div className="absolute w-10 h-10 bg-blue-500/30 rounded-full animate-ping" />
-            <div className="absolute w-6 h-6 bg-blue-500/50 rounded-full animate-pulse" />
-            <div className="w-3 h-3 bg-blue-400 rounded-full border-2 border-white shadow-[0_0_15px_#3b82f6]" />
+            <div className="absolute w-8 h-8 sm:w-10 sm:h-10 bg-blue-500/30 rounded-full animate-ping" />
+            <div className="absolute w-5 h-5 sm:w-6 sm:h-6 bg-blue-500/50 rounded-full animate-pulse" />
+            <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-blue-400 rounded-full border-2 border-white shadow-[0_0_15px_#3b82f6]" />
           </div>
         </div>
 

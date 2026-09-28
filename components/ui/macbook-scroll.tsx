@@ -74,14 +74,14 @@ export const MacbookScroll = ({
   return (
     <div
       ref={ref}
-      className="min-h-[130vh] flex flex-col items-center py-0 md:py-8 justify-start shrink-0 [perspective:800px] transform md:scale-100 scale-90 relative overflow-hidden"
+      className="min-h-[55vh] sm:min-h-[90vh] md:min-h-[130vh] flex flex-col items-center py-0 md:py-8 justify-start shrink-0 [perspective:800px] origin-top transform scale-[0.55] xs:scale-[0.68] sm:scale-80 md:scale-100 relative overflow-hidden max-w-full"
     >
       <motion.h2
         style={{
           translateY: textTransform,
           opacity: textOpacity,
         }}
-        className="text-white text-3xl md:text-5xl font-bold text-center mb-20 tracking-tight"
+        className="text-white text-2xl sm:text-3xl md:text-5xl font-bold text-center mb-8 sm:mb-14 md:mb-20 tracking-tight px-4"
       >
         {title || (
           <span>
@@ -119,7 +119,7 @@ export const MacbookScroll = ({
         <div className="h-2 w-20 mx-auto inset-x-0 absolute bottom-0 bg-[#313133] rounded-t-sm" />
       </div>
 
-      {badge && <div className="absolute right-4 top-20 z-40">{badge}</div>}
+      {badge && <div className="absolute right-2 sm:right-4 top-10 sm:top-20 z-40 scale-90 sm:scale-100">{badge}</div>}
     </div>
   );
 };

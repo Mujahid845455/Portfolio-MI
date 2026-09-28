@@ -173,7 +173,7 @@ export default function Achievements() {
     : certifications.slice(0, INITIAL_CERTS_COUNT);
 
   return (
-    <section id="achievements" className="relative py-24 overflow-hidden">
+    <section id="achievements" className="relative py-12 sm:py-16 md:py-24 overflow-hidden">
       
       {/* Background glow ambient */}
       <div className="absolute top-1/3 right-10 w-96 h-96 bg-purple-600/10 rounded-full blur-[140px] pointer-events-none" />
@@ -184,12 +184,12 @@ export default function Achievements() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gradient">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-gradient">
             Achievements & Recognition
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-400 text-sm sm:text-base md:text-lg max-w-2xl mx-auto px-2">
             Awards, certifications, hackathon participation, and competitive programming journey
           </p>
         </motion.div>
@@ -210,14 +210,14 @@ export default function Achievements() {
         {/* ── Aceternity Expandable Card Modal ───────────────── */}
         <AnimatePresence>
           {activeAchievement ? (
-            <div className="fixed inset-0 grid place-items-center z-[100] p-4 sm:p-6 overflow-y-auto">
+            <div className="fixed inset-0 grid place-items-center z-[100] p-3 sm:p-6 overflow-y-auto">
               <motion.div
                 layoutId={`card-${activeAchievement.id}-${id}`}
                 ref={modalRef}
-                className="w-full max-w-[620px] bg-[#0c101d] border border-white/15 rounded-3xl overflow-hidden shadow-2xl flex flex-col my-auto"
+                className="w-full max-w-[620px] bg-[#0c101d] border border-white/15 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl flex flex-col my-auto max-h-[90vh] overflow-y-auto"
               >
                 {/* Banner Image */}
-                <motion.div layoutId={`image-${activeAchievement.id}-${id}`} className="relative h-64 sm:h-72 w-full overflow-hidden bg-black">
+                <motion.div layoutId={`image-${activeAchievement.id}-${id}`} className="relative h-48 sm:h-64 md:h-72 w-full overflow-hidden bg-black shrink-0">
                   <Image
                     src={activeAchievement.image}
                     alt={activeAchievement.title}
@@ -244,18 +244,18 @@ export default function Achievements() {
                 </motion.div>
 
                 {/* Card Content Body */}
-                <div className="p-6 sm:p-8 space-y-6">
-                  <div className="flex flex-col sm:flex-row justify-between items-start gap-4 pb-4 border-b border-white/10">
+                <div className="p-4 sm:p-6 md:p-8 space-y-4 sm:space-y-6">
+                  <div className="flex flex-col sm:flex-row justify-between items-start gap-3 sm:gap-4 pb-4 border-b border-white/10">
                     <div>
                       <motion.h3
                         layoutId={`title-${activeAchievement.id}-${id}`}
-                        className="text-2xl font-extrabold text-white mb-1"
+                        className="text-xl sm:text-2xl font-extrabold text-white mb-1"
                       >
                         {activeAchievement.title}
                       </motion.h3>
                       <motion.p
                         layoutId={`description-${activeAchievement.id}-${id}`}
-                        className="text-gray-400 text-sm"
+                        className="text-gray-400 text-xs sm:text-sm"
                       >
                         {activeAchievement.description}
                       </motion.p>
@@ -278,9 +278,9 @@ export default function Achievements() {
                     <h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3 flex items-center gap-2">
                       <Sparkles size={14} className="text-yellow-400" /> Key Highlights & Impact
                     </h4>
-                    <ul className="space-y-3 text-sm text-gray-300">
+                    <ul className="space-y-2.5 sm:space-y-3 text-xs sm:text-sm text-gray-300">
                       {activeAchievement.highlights.map((item, idx) => (
-                        <li key={idx} className="flex items-start gap-3 bg-white/5 p-3 rounded-xl border border-white/5">
+                        <li key={idx} className="flex items-start gap-2.5 sm:gap-3 bg-white/5 p-2.5 sm:p-3 rounded-xl border border-white/5">
                           <span className="w-1.5 h-1.5 rounded-full bg-blue-400 mt-2 shrink-0" />
                           <span>{item}</span>
                         </li>
@@ -293,16 +293,16 @@ export default function Achievements() {
           ) : null}
         </AnimatePresence>
 
-        <div className="max-w-6xl mx-auto space-y-16">
+        <div className="max-w-6xl mx-auto space-y-12 sm:space-y-16">
           
           {/* ── Major Achievements (Expandable Cards List) ────── */}
           <div>
-            <h3 className="text-2xl font-bold mb-6 flex items-center gap-3 text-white">
-              <Trophy className="text-yellow-400" size={28} />
+            <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 flex items-center gap-2.5 sm:gap-3 text-white">
+              <Trophy className="text-yellow-400 w-6 h-6 sm:w-7 sm:h-7" />
               Major Achievements
             </h3>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
               {achievements.map((achievement) => {
                 const Icon = achievement.icon;
                 return (
@@ -311,42 +311,42 @@ export default function Achievements() {
                     key={achievement.id}
                     onClick={() => setActiveAchievement(achievement)}
                     whileHover={{ scale: 1.02, y: -4 }}
-                    className="glass rounded-2xl p-6 glow-hover cursor-pointer border border-white/10 hover:border-white/20 transition-all group"
+                    className="glass rounded-2xl p-4 sm:p-6 glow-hover cursor-pointer border border-white/10 hover:border-white/20 transition-all group overflow-hidden"
                   >
-                    <div className="flex items-start gap-4">
+                    <div className="flex items-start gap-3 sm:gap-4">
                       <motion.div
                         layoutId={`image-${achievement.id}-${id}`}
-                        className="p-3.5 rounded-2xl shrink-0"
+                        className="p-2.5 sm:p-3.5 rounded-2xl shrink-0"
                         style={{ backgroundColor: `${achievement.color}20`, border: `1px solid ${achievement.color}40` }}
                       >
-                        <Icon size={32} style={{ color: achievement.color }} />
+                        <Icon className="w-6 h-6 sm:w-8 sm:h-8" style={{ color: achievement.color }} />
                       </motion.div>
 
                       <div className="flex-1 min-w-0">
-                        <div className="flex items-center justify-between gap-2 mb-1">
+                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-2 mb-1">
                           <motion.h4
                             layoutId={`title-${achievement.id}-${id}`}
-                            className="font-bold text-lg text-white group-hover:text-blue-400 transition-colors truncate"
+                            className="font-bold text-base sm:text-lg text-white group-hover:text-blue-400 transition-colors line-clamp-1"
                           >
                             {achievement.title}
                           </motion.h4>
-                          <span className="text-xs text-gray-500 font-mono shrink-0">{achievement.organization}</span>
+                          <span className="text-[11px] sm:text-xs text-gray-400 sm:text-gray-500 font-mono shrink-0">{achievement.organization}</span>
                         </div>
 
                         <motion.p
                           layoutId={`description-${achievement.id}-${id}`}
-                          className="text-gray-400 text-sm line-clamp-2 mb-3"
+                          className="text-gray-400 text-xs sm:text-sm line-clamp-2 mb-2 sm:mb-3"
                         >
                           {achievement.description}
                         </motion.p>
 
                         <div className="flex items-center justify-between text-xs font-semibold pt-1">
-                          <span className="text-blue-400 group-hover:underline flex items-center gap-1">
+                          <span className="text-blue-400 group-hover:underline flex items-center gap-1 text-[11px] sm:text-xs">
                             Click to expand <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
                           </span>
                           <motion.button
                             layoutId={`button-${achievement.id}-${id}`}
-                            className="px-3 py-1.5 rounded-full bg-white/10 text-gray-300 group-hover:bg-white group-hover:text-black transition-colors"
+                            className="px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full bg-white/10 text-gray-300 group-hover:bg-white group-hover:text-black transition-colors text-[11px] sm:text-xs"
                           >
                             View
                           </motion.button>

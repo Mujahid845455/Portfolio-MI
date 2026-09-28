@@ -45,26 +45,26 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-24 overflow-hidden">
+    <section id="contact" className="relative py-12 sm:py-16 md:py-24 overflow-hidden">
       {/* Background ambient lighting */}
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
-        <div className="rounded-[36px] border border-white/10 bg-[#070a14]/90 p-8 sm:p-12 lg:p-16 shadow-2xl backdrop-blur-xl">
-          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <div className="rounded-2xl sm:rounded-3xl md:rounded-[36px] border border-white/10 bg-[#070a14]/90 p-4 sm:p-8 lg:p-16 shadow-2xl backdrop-blur-xl">
+          <div className="grid lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-16 items-start">
             
             {/* Left Content (Text Info + World Map with Glowing Pin) */}
-            <div className="lg:col-span-6 space-y-8 flex flex-col justify-between h-full">
+            <div className="lg:col-span-6 space-y-6 sm:space-y-8 flex flex-col justify-between h-full">
               <div>
                 {/* Top Glowing Mail Icon Button */}
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
-                  className="inline-flex items-center justify-center p-3.5 rounded-2xl bg-[#131b2e] border border-blue-500/30 text-blue-400 shadow-[0_0_25px_rgba(59,130,246,0.35)] mb-8"
+                  className="inline-flex items-center justify-center p-2.5 sm:p-3.5 rounded-xl sm:rounded-2xl bg-[#131b2e] border border-blue-500/30 text-blue-400 shadow-[0_0_25px_rgba(59,130,246,0.35)] mb-4 sm:mb-8"
                 >
-                  <Mail size={22} />
+                  <Mail className="w-5 h-5 sm:w-6 sm:h-6" />
                 </motion.div>
 
                 {/* Main Heading */}
@@ -72,7 +72,7 @@ export default function Contact() {
                   initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight mb-6"
+                  className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight mb-4 sm:mb-6"
                 >
                   Contact us
                 </motion.h2>
@@ -83,7 +83,7 @@ export default function Contact() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.1 }}
-                  className="text-gray-400 text-base sm:text-lg leading-relaxed mb-8 max-w-xl"
+                  className="text-gray-400 text-sm sm:text-lg leading-relaxed mb-6 sm:mb-8 max-w-xl"
                 >
                   We are always looking for ways to improve our products and services. Contact us and let us know how we can help you.
                 </motion.p>
@@ -94,16 +94,16 @@ export default function Contact() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 }}
-                  className="flex flex-wrap items-center gap-3 text-xs sm:text-sm text-gray-400 font-mono"
+                  className="flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center gap-2 sm:gap-3 text-xs sm:text-sm text-gray-400 font-mono break-all"
                 >
-                  <a href="mailto:mujahidulI845455@gmail.com" className="hover:text-blue-400 transition-colors">
+                  <a href="mailto:mujahidulI845455@gmail.com" className="hover:text-blue-400 transition-colors break-all">
                     mujahidulI845455@gmail.com
                   </a>
-                  <span className="text-gray-600">•</span>
+                  <span className="hidden sm:inline text-gray-600">•</span>
                   <a href="tel:+918603629937" className="hover:text-blue-400 transition-colors">
                     +91 8603629937
                   </a>
-                  <span className="text-gray-600">•</span>
+                  <span className="hidden sm:inline text-gray-600">•</span>
                   <span className="text-gray-300">Darbhanga, Bihar, India</span>
                 </motion.div>
               </div>
@@ -114,7 +114,7 @@ export default function Contact() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
-                className="relative mt-6 pt-4 border-t border-white/5"
+                className="relative mt-4 sm:mt-6 pt-4 border-t border-white/5"
               >
                 <WorldMap
                   dots={[
@@ -155,12 +155,12 @@ export default function Contact() {
               transition={{ duration: 0.5 }}
               className="lg:col-span-6"
             >
-              <div className="relative rounded-3xl bg-[#0c101d]/90 border border-white/10 p-6 sm:p-10 shadow-2xl overflow-hidden">
+              <div className="relative rounded-2xl sm:rounded-3xl bg-[#0c101d]/90 border border-white/10 p-4 sm:p-8 md:p-10 shadow-2xl overflow-hidden">
                 
                 {/* Background Grid Pattern Overlay */}
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
 
-                <form onSubmit={handleSubmit} className="relative z-10 space-y-6">
+                <form onSubmit={handleSubmit} className="relative z-10 space-y-4 sm:space-y-6">
                   
                   {/* Full Name */}
                   <div>

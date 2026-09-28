@@ -124,10 +124,10 @@ export default function Experience() {
       </div>
 
       {/* ── Timeline Section Below ────────────────────────── */}
-      <div className="container mx-auto px-4 relative z-10 max-w-4xl -mt-20">
+      <div className="container mx-auto px-4 relative z-10 max-w-4xl -mt-36 xs:-mt-24 sm:-mt-20 md:-mt-20">
         <div className="relative">
           {/* Timeline Line */}
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500" />
+          <div className="absolute left-4 sm:left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500" />
 
           {experiences.map((exp, index) => (
             <motion.div
@@ -136,47 +136,47 @@ export default function Experience() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="relative pl-20 pb-12 last:pb-0"
+              className="relative pl-10 sm:pl-20 pb-8 sm:pb-12 last:pb-0"
             >
               {/* Timeline Dot */}
-              <div className="absolute left-6 top-2 w-5 h-5 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 border-4 border-gray-900 glow" />
+              <div className="absolute left-2.5 sm:left-6 top-2 w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 border-2 sm:border-4 border-gray-900 glow" />
 
               {/* Content Card */}
-              <div className="glass rounded-2xl p-8 glow-hover hover:scale-[1.01] transition-transform border border-white/10">
-                <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
+              <div className="glass rounded-2xl p-4 sm:p-8 glow-hover hover:scale-[1.01] transition-transform border border-white/10">
+                <div className="flex flex-wrap items-start justify-between gap-3 sm:gap-4 mb-4">
                   <div>
-                    <h3 className="text-2xl font-bold mb-2 text-white">{exp.role}</h3>
-                    <div className="flex items-center gap-2 text-lg text-blue-400 mb-2 font-medium">
-                      <Briefcase size={20} />
+                    <h3 className="text-xl sm:text-2xl font-bold mb-1 sm:mb-2 text-white">{exp.role}</h3>
+                    <div className="flex items-center gap-2 text-base sm:text-lg text-blue-400 mb-1 sm:mb-2 font-medium">
+                      <Briefcase className="w-4 h-4 sm:w-5 sm:h-5" />
                       {exp.company}
                     </div>
                   </div>
                   <div className="flex flex-col items-end gap-2">
-                    <span className="px-4 py-1 bg-purple-500/20 border border-purple-500/30 text-purple-300 rounded-full text-sm font-medium">
+                    <span className="px-3 py-1 sm:px-4 sm:py-1 bg-purple-500/20 border border-purple-500/30 text-purple-300 rounded-full text-xs sm:text-sm font-medium">
                       {exp.type}
                     </span>
                   </div>
                 </div>
 
-                <div className="flex flex-wrap gap-4 text-sm text-gray-400 mb-6">
-                  <div className="flex items-center gap-2">
-                    <Calendar size={16} />
+                <div className="flex flex-wrap gap-3 sm:gap-4 text-xs sm:text-sm text-gray-400 mb-4 sm:mb-6">
+                  <div className="flex items-center gap-1.5 sm:gap-2">
+                    <Calendar size={15} />
                     {exp.period} ({exp.duration})
                   </div>
-                  <div className="flex items-center gap-2">
-                    <MapPin size={16} />
+                  <div className="flex items-center gap-1.5 sm:gap-2">
+                    <MapPin size={15} />
                     {exp.location}
                   </div>
                 </div>
 
-                <div className="mb-6">
-                  <h4 className="font-semibold text-lg mb-3 text-white flex items-center gap-2">
-                    <CheckCircle size={18} className="text-blue-400" /> Key Responsibilities
+                <div className="mb-4 sm:mb-6">
+                  <h4 className="font-semibold text-base sm:text-lg mb-2 sm:mb-3 text-white flex items-center gap-2">
+                    <CheckCircle className="text-blue-400 w-4 h-4 sm:w-5 sm:h-5" /> Key Responsibilities
                   </h4>
-                  <ul className="space-y-2.5">
+                  <ul className="space-y-2 sm:space-y-2.5">
                     {exp.responsibilities.map((resp, respIndex) => (
-                      <li key={respIndex} className="flex items-start gap-3 text-gray-300 text-sm">
-                        <span className="text-blue-400 mt-1">▹</span>
+                      <li key={respIndex} className="flex items-start gap-2.5 sm:gap-3 text-gray-300 text-xs sm:text-sm">
+                        <span className="text-blue-400 mt-0.5 sm:mt-1">▹</span>
                         <span>{resp}</span>
                       </li>
                     ))}
@@ -184,14 +184,14 @@ export default function Experience() {
                 </div>
 
                 <div>
-                  <h4 className="font-semibold text-sm mb-3 text-gray-400 flex items-center gap-2">
+                  <h4 className="font-semibold text-xs sm:text-sm mb-2.5 sm:mb-3 text-gray-400 flex items-center gap-2">
                     <Code size={16} /> Technologies Used
                   </h4>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2">
                     {exp.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1 glass glass-hover rounded-lg text-sm text-gray-300 border border-white/10 font-mono"
+                        className="px-2.5 py-1 sm:px-3 sm:py-1 glass glass-hover rounded-lg text-xs sm:text-sm text-gray-300 border border-white/10 font-mono"
                       >
                         {tech}
                       </span>
