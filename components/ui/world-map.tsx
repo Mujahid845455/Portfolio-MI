@@ -89,7 +89,7 @@ export default function WorldMap({
         </span>
       </div>
 
-      <div className="relative w-full aspect-[2/1] min-h-[200px] sm:min-h-[260px]">
+      <div className="relative w-full aspect-[2/1] sm:min-h-[260px] max-w-full overflow-hidden">
         {/* World Map SVG Canvas */}
         <svg
           viewBox={`0 0 ${SVG_WIDTH} ${SVG_HEIGHT}`}

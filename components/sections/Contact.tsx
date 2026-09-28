@@ -45,18 +45,18 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-12 sm:py-16 md:py-24 overflow-hidden">
+    <section id="contact" className="relative py-12 sm:py-16 md:py-24 overflow-hidden w-full max-w-full">
       {/* Background ambient lighting */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px] pointer-events-none max-w-full overflow-hidden" />
+      <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-[120px] pointer-events-none max-w-full overflow-hidden" />
 
-      <div className="container mx-auto px-4 max-w-7xl relative z-10">
-        <div className="rounded-2xl sm:rounded-3xl md:rounded-[36px] border border-white/10 bg-[#070a14]/90 p-4 sm:p-8 lg:p-16 shadow-2xl backdrop-blur-xl">
-          <div className="grid lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-16 items-start">
+      <div className="container mx-auto px-3 sm:px-4 max-w-7xl relative z-10 w-full max-w-full overflow-hidden">
+        <div className="rounded-2xl sm:rounded-3xl md:rounded-[36px] border border-white/10 bg-[#070a14]/90 p-3.5 sm:p-8 lg:p-16 shadow-2xl backdrop-blur-xl w-full max-w-full overflow-hidden">
+          <div className="grid lg:grid-cols-12 gap-6 sm:gap-12 lg:gap-16 items-start w-full max-w-full overflow-hidden">
             
             {/* Left Content (Text Info + World Map with Glowing Pin) */}
-            <div className="lg:col-span-6 space-y-6 sm:space-y-8 flex flex-col justify-between h-full">
-              <div>
+            <div className="lg:col-span-6 space-y-5 sm:space-y-8 flex flex-col justify-between h-full w-full max-w-full overflow-hidden">
+              <div className="w-full max-w-full overflow-hidden">
                 {/* Top Glowing Mail Icon Button */}
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
@@ -72,7 +72,7 @@ export default function Contact() {
                   initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight mb-4 sm:mb-6"
+                  className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight mb-4 sm:mb-6 break-words"
                 >
                   Contact us
                 </motion.h2>
@@ -94,9 +94,9 @@ export default function Contact() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 }}
-                  className="flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center gap-2 sm:gap-3 text-xs sm:text-sm text-gray-400 font-mono break-all"
+                  className="flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center gap-2 sm:gap-3 text-xs sm:text-sm text-gray-400 font-mono w-full max-w-full overflow-hidden"
                 >
-                  <a href="mailto:mujahidulI845455@gmail.com" className="hover:text-blue-400 transition-colors break-all">
+                  <a href="mailto:mujahidulI845455@gmail.com" className="hover:text-blue-400 transition-colors break-all max-w-full">
                     mujahidulI845455@gmail.com
                   </a>
                   <span className="hidden sm:inline text-gray-600">•</span>
@@ -114,7 +114,7 @@ export default function Contact() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
-                className="relative mt-4 sm:mt-6 pt-4 border-t border-white/5"
+                className="relative mt-4 sm:mt-6 pt-4 border-t border-white/5 w-full max-w-full overflow-hidden"
               >
                 <WorldMap
                   dots={[
@@ -153,18 +153,18 @@ export default function Contact() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="lg:col-span-6"
+              className="lg:col-span-6 w-full max-w-full overflow-hidden"
             >
-              <div className="relative rounded-2xl sm:rounded-3xl bg-[#0c101d]/90 border border-white/10 p-4 sm:p-8 md:p-10 shadow-2xl overflow-hidden">
+              <div className="relative rounded-2xl sm:rounded-3xl bg-[#0c101d]/90 border border-white/10 p-3.5 sm:p-8 md:p-10 shadow-2xl overflow-hidden w-full max-w-full">
                 
                 {/* Background Grid Pattern Overlay */}
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
 
-                <form onSubmit={handleSubmit} className="relative z-10 space-y-4 sm:space-y-6">
+                <form onSubmit={handleSubmit} className="relative z-10 space-y-3.5 sm:space-y-6 w-full max-w-full">
                   
                   {/* Full Name */}
-                  <div>
-                    <label htmlFor="name" className="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2.5">
+                  <div className="w-full max-w-full">
+                    <label htmlFor="name" className="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">
                       Full name
                     </label>
                     <input
@@ -173,9 +173,9 @@ export default function Contact() {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="Manu Arora"
-                      className={`w-full px-4 py-3.5 bg-[#141a29]/90 border ${
+                      className={`w-full max-w-full px-3.5 py-3 sm:px-4 sm:py-3.5 bg-[#141a29]/90 border ${
                         errors.name ? 'border-red-500/80 focus:ring-red-500/50' : 'border-white/10 focus:border-blue-500/60 focus:ring-blue-500/30'
-                      } rounded-xl text-white placeholder-gray-500 text-sm focus:outline-none focus:ring-2 transition-all duration-200`}
+                      } rounded-xl text-white placeholder-gray-500 text-xs sm:text-sm focus:outline-none focus:ring-2 transition-all duration-200`}
                     />
                     {errors.name && (
                       <p className="text-red-400 text-xs mt-1.5 flex items-center gap-1">
@@ -186,8 +186,8 @@ export default function Contact() {
                   </div>
 
                   {/* Email Address */}
-                  <div>
-                    <label htmlFor="email" className="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2.5">
+                  <div className="w-full max-w-full">
+                    <label htmlFor="email" className="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">
                       Email Address
                     </label>
                     <input
@@ -196,9 +196,9 @@ export default function Contact() {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="support@aceternity.com"
-                      className={`w-full px-4 py-3.5 bg-[#141a29]/90 border ${
+                      className={`w-full max-w-full px-3.5 py-3 sm:px-4 sm:py-3.5 bg-[#141a29]/90 border ${
                         errors.email ? 'border-red-500/80 focus:ring-red-500/50' : 'border-white/10 focus:border-blue-500/60 focus:ring-blue-500/30'
-                      } rounded-xl text-white placeholder-gray-500 text-sm focus:outline-none focus:ring-2 transition-all duration-200`}
+                      } rounded-xl text-white placeholder-gray-500 text-xs sm:text-sm focus:outline-none focus:ring-2 transition-all duration-200`}
                     />
                     {errors.email && (
                       <p className="text-red-400 text-xs mt-1.5 flex items-center gap-1">
@@ -209,8 +209,8 @@ export default function Contact() {
                   </div>
 
                   {/* Company */}
-                  <div>
-                    <label htmlFor="company" className="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2.5">
+                  <div className="w-full max-w-full">
+                    <label htmlFor="company" className="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">
                       Company
                     </label>
                     <input
@@ -219,24 +219,24 @@ export default function Contact() {
                       value={formData.company}
                       onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                       placeholder="Aceternity Labs LLC"
-                      className="w-full px-4 py-3.5 bg-[#141a29]/90 border border-white/10 focus:border-blue-500/60 focus:ring-blue-500/30 rounded-xl text-white placeholder-gray-500 text-sm focus:outline-none focus:ring-2 transition-all duration-200"
+                      className="w-full max-w-full px-3.5 py-3 sm:px-4 sm:py-3.5 bg-[#141a29]/90 border border-white/10 focus:border-blue-500/60 focus:ring-blue-500/30 rounded-xl text-white placeholder-gray-500 text-xs sm:text-sm focus:outline-none focus:ring-2 transition-all duration-200"
                     />
                   </div>
 
                   {/* Message */}
-                  <div>
-                    <label htmlFor="message" className="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2.5">
+                  <div className="w-full max-w-full">
+                    <label htmlFor="message" className="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">
                       Message
                     </label>
                     <textarea
                       id="message"
-                      rows={5}
+                      rows={3}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Type your message here"
-                      className={`w-full px-4 py-3.5 bg-[#141a29]/90 border ${
+                      className={`w-full max-w-full px-3.5 py-3 sm:px-4 sm:py-3.5 bg-[#141a29]/90 border ${
                         errors.message ? 'border-red-500/80 focus:ring-red-500/50' : 'border-white/10 focus:border-blue-500/60 focus:ring-blue-500/30'
-                      } rounded-xl text-white placeholder-gray-500 text-sm focus:outline-none focus:ring-2 transition-all duration-200 resize-none`}
+                      } rounded-xl text-white placeholder-gray-500 text-xs sm:text-sm focus:outline-none focus:ring-2 transition-all duration-200 resize-none`}
                     />
                     {errors.message && (
                       <p className="text-red-400 text-xs mt-1.5 flex items-center gap-1">
@@ -251,7 +251,7 @@ export default function Contact() {
                     <motion.div
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-xl flex items-center gap-3 text-emerald-400 text-xs sm:text-sm font-medium"
+                      className="p-3 sm:p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-xl flex items-center gap-3 text-emerald-400 text-xs sm:text-sm font-medium"
                     >
                       <CheckCircle size={18} />
                       <span>Message sent successfully! I will get back to you shortly.</span>
@@ -259,13 +259,13 @@ export default function Contact() {
                   )}
 
                   {/* Submit Button */}
-                  <div className="pt-2">
+                  <div className="pt-1.5 sm:pt-2 w-full max-w-full">
                     <motion.button
                       type="submit"
                       disabled={status === 'loading'}
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className={`px-7 py-3 bg-[#1e2538] hover:bg-[#28324a] active:bg-[#181e2e] text-white text-sm font-semibold rounded-xl border border-white/15 shadow-xl transition-all duration-200 flex items-center justify-center gap-2 ${
+                      className={`w-full sm:w-auto px-7 py-3 bg-[#1e2538] hover:bg-[#28324a] active:bg-[#181e2e] text-white text-xs sm:text-sm font-semibold rounded-xl border border-white/15 shadow-xl transition-all duration-200 flex items-center justify-center gap-2 ${
                         status === 'loading' ? 'opacity-50 cursor-not-allowed' : ''
                       }`}
                     >
