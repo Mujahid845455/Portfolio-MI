@@ -25,7 +25,7 @@ const experiences = [
 export default function Experience() {
   return (
     <section id="experience" className="relative py-16 overflow-hidden">
-      
+
       {/* ── Aceternity Macbook Scroll Experience Feature ───── */}
       <div className="w-full overflow-hidden">
         <MacbookScroll
@@ -37,17 +37,11 @@ export default function Experience() {
               </span>
             </span>
           }
-          badge={
-            <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-purple-600 via-indigo-600 to-blue-500 p-0.5 shadow-[0_0_20px_rgba(99,102,241,0.5)] -rotate-12 hover:scale-110 transition-transform">
-              <div className="w-full h-full bg-[#0a0d18] rounded-full flex items-center justify-center text-white font-extrabold text-xs">
-                MI
-              </div>
-            </div>
-          }
+
         >
           {/* Macbook Screen Content */}
           <div className="w-full h-full bg-[#070a14] p-3.5 sm:p-4 flex flex-col justify-between text-left font-sans overflow-y-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden border border-white/10 rounded-lg">
-            
+
             {/* Top Browser Bar */}
             <div className="flex items-center justify-between border-b border-white/10 pb-2 mb-2 shrink-0">
               <div className="flex items-center gap-1.5">
@@ -66,7 +60,7 @@ export default function Experience() {
 
             {/* Internship Dashboard Content */}
             <div className="space-y-2.5 flex-1 flex flex-col justify-between">
-              
+
               {/* Header Info */}
               <div className="flex items-start justify-between gap-2 border-b border-white/5 pb-2">
                 <div>
