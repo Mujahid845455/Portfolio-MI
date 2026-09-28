@@ -1,36 +1,124 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mujahidul Islam - Portfolio
 
-## Getting Started
+A premium portfolio website showcasing web development projects, skills, and achievements.
 
-First, run the development server:
+## 🚀 Features
+
+- **Modern Design**: Glassmorphism effects, smooth animations, particle background
+- **Featured Projects**: Interactive project showcase with tabbed navigation
+- **Responsive**: Works seamlessly on desktop, tablet, and mobile
+- **Performance Optimized**: Built with Next.js 14 and TypeScript
+- **Smooth Animations**: Framer Motion for fluid transitions
+- **Contact Form**: Fully functional contact form with validation
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 14
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion, GSAP
+- **Icons**: Lucide React, React Icons
+- **Deployment**: Vercel
+
+## 📦 Installation
 
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🌐 Development
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Open [http://localhost:3000](http://localhost:3000) to view the portfolio in development mode.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📁 Project Structure
 
-## Learn More
+```
+portfolio/
+├── app/
+│   ├── layout.tsx
+│   ├── page.tsx
+│   └── globals.css
+├── components/
+│   ├── sections/
+│   │   ├── Hero.tsx
+│   │   ├── About.tsx
+│   │   ├── Skills.tsx
+│   │   ├── Projects.tsx
+│   │   ├── Experience.tsx
+│   │   ├── Achievements.tsx
+│   │   └── Contact.tsx
+│   ├── Navbar.tsx
+│   ├── Footer.tsx
+│   └── ParticleBackground.tsx
+├── public/
+│   ├── resume.pdf
+│   └── projects/
+└── package.json
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 🎨 Customization
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Update Personal Information
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Edit the content in each component section:
+- `components/sections/Hero.tsx` - Name, role, introduction
+- `components/sections/About.tsx` - Education, experience
+- `components/sections/Projects.tsx` - Project details
+- `components/sections/Contact.tsx` - Contact information
 
-## Deploy on Vercel
+### Add Project Images
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Place project screenshots in `public/projects/` folder and update image paths in `Projects.tsx`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Update Resume
+
+Replace `public/resume.pdf` with your actual resume file.
+
+## 📧 Contact Form Setup
+
+To make the contact form functional:
+
+1. Install EmailJS:
+```bash
+npm install @emailjs/browser
+```
+
+2. Create an account at [EmailJS](https://www.emailjs.com/)
+
+3. Add your credentials in `Contact.tsx`:
+```typescript
+import emailjs from '@emailjs/browser';
+
+// In handleSubmit function
+emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form, 'YOUR_PUBLIC_KEY')
+```
+
+## 🚀 Deployment
+
+Deploy to Vercel:
+
+```bash
+vercel
+```
+
+Or push to GitHub and connect to Vercel for automatic deployments.
+
+## 📄 License
+
+This project is open source and available under the MIT License.
+
+## 👨‍💻 Author
+
+**Mujahidul Islam**
+- GitHub: [@mujahidul885](https://github.com/mujahidul885)
+- Email: mujahidulI845455@gmail.com

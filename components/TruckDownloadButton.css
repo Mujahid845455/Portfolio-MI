@@ -1,0 +1,309 @@
+/* Neumorphic Animated Truck Download Button Styles */
+
+.neu-truck-button {
+  position: relative;
+  background-color: #0c101d;
+  border-radius: 50px;
+  box-shadow: 
+    inset 4px 4px 10px #04070f, 
+    inset -4px -4px 10px #162035;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 0;
+  height: 50px;
+  width: 100%;
+  max-width: 380px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+  user-select: none;
+  outline: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.neu-truck-button.compact {
+  height: 44px;
+  max-width: 220px;
+  font-size: 13px;
+  border-radius: 30px;
+}
+
+/* Hover signature */
+.neu-truck-button:hover:not(.active):not(.completed) {
+  box-shadow: 
+    inset 2px 2px 5px #04070f, 
+    inset -2px -2px 5px #162035, 
+    0 8px 25px rgba(16, 185, 129, 0.25), 
+    0 0 15px rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
+  border-color: rgba(16, 185, 129, 0.4);
+}
+
+.neu-truck-button:active:not(.active):not(.completed) {
+  box-shadow: 
+    inset 5px 5px 12px #04070f, 
+    inset -5px -5px 12px #162035;
+  transform: translateY(1px);
+}
+
+/* Active debossed trench state when truck runs */
+.neu-truck-button.active {
+  box-shadow: 
+    inset 6px 6px 14px #04060d, 
+    inset -6px -6px 14px #141c2e;
+  background-color: #070a14;
+  border-color: rgba(16, 185, 129, 0.3);
+  cursor: wait;
+}
+
+/* Completed state */
+.neu-truck-button.completed {
+  box-shadow: 
+    0 6px 20px rgba(16, 185, 129, 0.3), 
+    inset 1px 1px 2px rgba(255, 255, 255, 0.2);
+  background-color: #0d1322;
+  border-color: rgba(16, 185, 129, 0.6);
+  cursor: pointer;
+}
+
+.neu-truck-button.completed:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+}
+
+/* Inset icon socket */
+.neu-inset-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #0d111c;
+  box-shadow: 
+    inset 2px 2px 5px #050811, 
+    inset -2px -2px 5px #172136;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #34d399;
+  transition: all 0.3s ease;
+  shrink: 0;
+}
+
+.neu-truck-button.compact .neu-inset-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.neu-truck-button:hover .neu-inset-icon {
+  transform: scale(1.06);
+  color: #10b981;
+}
+
+/* Highway stage container */
+.highway-stage {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.25s ease;
+  overflow: hidden;
+  border-radius: 50px;
+}
+
+.neu-truck-button.active .highway-stage,
+.neu-truck-button.running .highway-stage,
+.highway-stage.active {
+  opacity: 1 !important;
+  pointer-events: auto;
+  z-index: 10;
+}
+
+/* Moving dashed lane stripes */
+.road-track-line {
+  position: absolute;
+  left: 0;
+  top: 58%;
+  width: 260%;
+  height: 2px;
+  background: repeating-linear-gradient(
+    90deg,
+    #334155,
+    #334155 22px,
+    transparent 22px,
+    transparent 44px
+  );
+  opacity: 0.7;
+  transform: translateX(0);
+}
+
+.neu-truck-button.active .road-track-line {
+  animation: roadDashMove 0.22s linear infinite;
+}
+
+@keyframes roadDashMove {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-44px); }
+}
+
+/* Truck Rig Container */
+.truck-container {
+  position: absolute;
+  bottom: 8px;
+  left: -130px;
+  width: 100px;
+  height: 44px;
+  z-index: 20;
+  transform: translateX(0);
+  transition: transform 0.08s linear;
+  pointer-events: none;
+}
+
+.truck-body-bounce {
+  animation: truckBounce 0.16s ease-in-out infinite alternate;
+  transform-origin: bottom center;
+}
+
+@keyframes truckBounce {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-1.5px) rotate(0.4deg); }
+}
+
+/* Wheel rotation */
+.wheel-rotation {
+  transform-origin: center;
+  animation: spinWheels 0.24s linear infinite;
+}
+
+@keyframes spinWheels {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Exhaust smoke puffs */
+.exhaust-puff {
+  position: absolute;
+  left: -4px;
+  bottom: 8px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  opacity: 0;
+  pointer-events: none;
+  animation: puffSmoke 0.38s ease-out infinite;
+}
+
+@keyframes puffSmoke {
+  0% {
+    opacity: 0.7;
+    transform: translate(0, 0) scale(0.6);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-26px, -10px) scale(2.4);
+  }
+}
+
+/* Headlight beam cone */
+.headlight-cone {
+  position: absolute;
+  right: -38px;
+  top: 20px;
+  width: 44px;
+  height: 16px;
+  background: linear-gradient(90deg, rgba(254, 240, 138, 0.8), transparent);
+  clip-path: polygon(0 35%, 100% 0%, 100% 100%, 0 65%);
+  pointer-events: none;
+}
+
+/* High-speed boost exit */
+.truck-boost-exit {
+  transition: transform 0.32s cubic-bezier(0.32, 0, 0.15, 1) !important;
+  transform: translateX(440px) scale(1.05) !important;
+}
+
+/* Progress bar slot */
+.neu-progress-slot {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: inset 1px 1px 2px #04060d;
+  overflow: hidden;
+}
+
+.neu-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #10b981, #059669);
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.6);
+  transition: width 0.08s linear;
+}
+
+/* Completion Stage */
+.completion-stage {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.neu-truck-button.completed .completion-stage {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Check socket */
+.neu-check-socket {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #0a1120;
+  box-shadow: 
+    inset 3px 3px 6px #03060f, 
+    inset -3px -3px 6px #121c32;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  shrink: 0;
+}
+
+.neu-truck-button.compact .neu-check-socket {
+  width: 28px;
+  height: 28px;
+}
+
+.tick-path {
+  stroke-dasharray: 40;
+  stroke-dashoffset: 40;
+  transition: stroke-dashoffset 0.45s cubic-bezier(0.65, 0, 0.35, 1) 0.1s;
+}
+
+.neu-truck-button.completed .tick-path {
+  stroke-dashoffset: 0;
+}
+
+.tick-circle-fill {
+  transform-origin: center;
+  transform: scale(0);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.neu-truck-button.completed .tick-circle-fill {
+  transform: scale(1);
+}
