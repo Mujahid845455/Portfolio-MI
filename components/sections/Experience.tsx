@@ -37,79 +37,7 @@ export default function Experience() {
           </p>
         </div>
 
-        <div className="w-full bg-[#070a14] rounded-2xl border border-white/15 p-4 sm:p-6 shadow-2xl space-y-4">
-          {/* Top Browser Bar */}
-          <div className="flex items-center justify-between border-b border-white/10 pb-3">
-            <div className="flex items-center gap-1.5">
-              <div className="w-2.5 h-2.5 rounded-full bg-red-500/90 shadow-[0_0_6px_rgba(239,68,68,0.5)]" />
-              <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/90 shadow-[0_0_6px_rgba(234,179,8,0.5)]" />
-              <div className="w-2.5 h-2.5 rounded-full bg-green-500/90 shadow-[0_0_6px_rgba(34,197,94,0.5)]" />
-            </div>
-            <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-[11px] font-mono text-gray-300">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              uptoskills.com/internship
-            </div>
-            <span className="text-[10px] px-2 py-0.5 bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 rounded-full font-medium">
-              Verified
-            </span>
-          </div>
 
-          {/* Internship Dashboard Content */}
-          <div className="space-y-4">
-            {/* Header Info */}
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/5 pb-3">
-              <div>
-                <div className="flex items-center gap-2 mb-1">
-                  <span className="px-2 py-0.5 bg-blue-500/20 text-blue-400 border border-blue-500/30 rounded text-[10px] font-mono font-semibold">
-                    UptoSkills
-                  </span>
-                  <span className="text-xs text-gray-400 font-mono">• Remote</span>
-                </div>
-                <h3 className="text-base sm:text-lg font-extrabold text-white tracking-tight">
-                  Web Development Intern
-                </h3>
-              </div>
-              <div className="shrink-0">
-                <span className="text-xs font-mono text-gray-300 bg-white/5 border border-white/10 px-2.5 py-1 rounded inline-block">
-                  Dec 2025 - Mar 2026
-                </span>
-                <span className="text-xs text-gray-400 mt-1 block font-mono">
-                  3 Months Duration
-                </span>
-              </div>
-            </div>
-
-            {/* Responsibilities list */}
-            <div className="space-y-2 text-xs sm:text-sm text-gray-300">
-              <div className="text-[11px] font-mono text-blue-400 uppercase tracking-wider font-bold mb-1">
-                Key Deliverables & Tasks
-              </div>
-              {experiences[0].responsibilities.map((resp, idx) => (
-                <div key={idx} className="flex items-start gap-2 leading-relaxed">
-                  <span className="text-blue-400 font-bold shrink-0 mt-0.5">▹</span>
-                  <span>{resp}</span>
-                </div>
-              ))}
-            </div>
-
-            {/* Tech Stack */}
-            <div className="pt-3 border-t border-white/10">
-              <div className="text-[10px] font-mono text-gray-400 uppercase tracking-wider font-semibold mb-2">
-                Technologies Used
-              </div>
-              <div className="flex flex-wrap gap-1.5">
-                {experiences[0].technologies.map((tech) => (
-                  <span
-                    key={tech}
-                    className="text-xs font-mono px-2.5 py-1 bg-blue-500/10 border border-blue-500/25 text-blue-300 rounded-md"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
 
       {/* ── Aceternity Macbook Scroll Experience Feature (Desktop Only) ───── */}
